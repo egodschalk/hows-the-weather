@@ -1,7 +1,7 @@
 :root {
     --Primary: #1e0342;
-    --Secondary: #9ac8cd;
-    --Tertiary: #e1f7f5;
+    --Secondary: #6b9cc4;
+    --Tertiary: #cce0ef;
     --Accent: #0e46a3;
 }
 
@@ -10,36 +10,41 @@
 }
 
 header {
+    background-image: url(../images/clouds.jpg);
+    background-size: cover;
     display: flex;
     text-align: left;
+    height: 300px;
+    width: 1250px;
+    /* order: -10; */
 }
 
-#clouds {
+/* #clouds {
+    background-image: url(../images/clouds.jpg);
     width: 1250px;
+    height: fit-content;
     order: -10;
-}
+} */
 
 h1 {
     color: var(--Primary);
     font-size: 40pt;
     min-width: 100vw;
-    position: relative;
-    right: 100%;
-    position: fixed;
-    left: 0;
+    position: absolute;
     padding: 20px;
 }
+
 
 #search-bar {
     background-color: var(--Primary);
     width: 500px;
     height: 100px;
-    position: fixed;
-    left: 0;
     border-radius: 10px;
     border: 2px inset var(--Primary);
     margin-left: 25vw;
     margin-top: 100px;
+    position: absolute;
+    left: 4vw;
 }
 
 #search-form {
@@ -54,8 +59,8 @@ h1 {
 
 .search-btn {
     padding: 5px;
-    background-color: var(--Secondary);
-    border: 2px outset var(--Secondary);
+    background-color: var(--Tertiary);
+    border: 2px outset var(--Tertiary);
 }
 
 .search-btn:hover {
@@ -63,31 +68,38 @@ h1 {
 }
 
 #location {
-    width: 180px;
+    /* width: 180px; */
     background-color: white;
     color: var(--Accent);
     font-weight: 600;
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 30px;
     margin: 10px;
     text-align: center;
-    padding-top: 25px;
+    display: flex;
+    position: absolute;
+    top: 200px;
+    left: 39vw;
 }
 
 .current-container {
     width: 95vw;
-    height: 125px;
+    height: fit-content;
     background-color: var(--Secondary);
     color: var(--Primary);
     border-radius: 10px;
     margin: 5px 2vw;
+    padding-bottom: 10px;
     border: 10px outset var(--Secondary);
     text-align: center;
     display: flex;
+    flex-wrap: wrap;
 }
 
-h3 {
-    padding: 30px 2%;
+#current-header {
+    padding: 10px;
+    font-size: 16pt;
+    width: 100%;
 }
 
 #current-weather-card {
@@ -97,8 +109,22 @@ h3 {
     color: var(--Accent);
     border-radius: 10px;
     margin: 5px 2vw;
-    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
 }
+
+#current-date,
+#current-humidity,
+#current-wind {
+    z-index: 10;
+    padding-top: 37px;
+}
+
+#current-temp {
+    font-size: 24pt;
+    padding-top: 28px;
+}
+
 
 .forecast-container {
     width: 95vw;
@@ -107,13 +133,18 @@ h3 {
     color: var(--Primary);
     border-radius: 10px;
     margin: 5px 2vw;
+    padding-bottom: 10px;
     border: 10px outset var(--Tertiary);
     text-align: center;
     display: flex;
+    z-index: 2;
+    flex-wrap: wrap;
 }
 
-h4 {
-    padding: 10% 2%;
+#forecast-header {
+    padding: 20px ;
+    font-size: 16pt;
+    width: 100%;
 }
 
 #forecast-weather-card {
@@ -123,24 +154,101 @@ h4 {
     color: var(--Accent);
     border-radius: 10px;
     margin: 5px 2vw;
-    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    z-index: 5;
+}
+
+#forecast-date,
+#forecast-humidity,
+#forecast-wind {
+    z-index: 10;
+    padding-top: 37px;
+}
+
+#forecast-temp {
+    font-size: 24pt;
+    padding-top: 28px;
 }
 
 
 
-
-
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 850px) {
     
+    header {
+        background-image: url(../images/clouds_sm.jpg);
+        background-size: cover;
+
+        height: 287px;
+        width: 100vw;
+        /* order: -10; */
+    }
+
     h1 {
         font-size: 30pt;
     }
 
     #search-bar {
         width: 300px;
+        left: 7vw;
     }
 
     #search-form {
         padding: 10% 10px;
     }
+
+    #location {
+        left: 38vw;
+    }
+
+}
+
+
+@media screen and (max-width: 450px) {
+    
+    header {
+        height: 220px;
+    }
+
+    h1 {
+        font-size: 22pt;
+    }
+
+    #search-bar {
+        width: 300px;
+        height: 80px;
+        margin-left: 4vw;
+        margin-top: 60px;
+    }
+
+    #search-form {
+        padding: 7% 10px;
+    }
+
+    #location {
+        left: 17vw;
+        top: 160px;
+        z-index: 15;
+    }
+
+    #current-weather-card {
+        flex-wrap: wrap;
+        height: 150px;
+    }
+
+    #current-humidity,
+    #current-wind {
+        padding-top: 0px;
+    }
+
+    #forecast-weather-card {
+        flex-wrap: wrap;
+        height: 150px;
+    }
+
+    #forecast-humidity,
+    #forecast-wind {
+        padding-top: 0px;
+    }
+
 }
