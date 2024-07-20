@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>How's the Weather</title>
+</head>
+<body>
+    <header>
+        <img src="./images/clouds.jpg" id="clouds" alt="picture of clouds in the sky">
+        <h1>How's the Weather?</h1>
+        <div id="search-bar">
+            <form id="search-form" action="">
+                <input id="search-field" type="text" placeholder="Enter your location...">
+                <button class="search-btn" id="button">
+                    <i class=""><b>Search</b></i>
+            </form>
+        </div>
+        <div id="location"></div>
+            <h2>Location:</h2>
+            <div id="location-result">Cincinnati, OH 45213</div>
+    </header>
+    <main>
+        <section class="current-container">
+            <h3>Current Weather</h3>
+            <div id="current-weather-card"></div>
+                <div id="today"></div>
+                <div id="today-icon"></div>
+                <div id="today-temp"></div>
+                <div id="today-humidity"></div>
+                <div id="today-wind"></div>
+        </section>
+        <section class="forecast-container">
+            <h4>5-Day Forecast</h4>
+            <div id="forecast-weather-card"></div>
+                <div id="forecast-date">7/15</div>
+                <div id="forecast-icon">@</div>
+                <div id="forecast-temp">85</div>
+                <div id="forecast-humidity"></div>
+                <div id="forecast-wind"></div>
+        </section>
+    </main>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

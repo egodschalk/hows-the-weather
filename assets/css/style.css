@@ -1,0 +1,146 @@
+:root {
+    --Primary: #1e0342;
+    --Secondary: #9ac8cd;
+    --Tertiary: #e1f7f5;
+    --Accent: #0e46a3;
+}
+
+* {
+    font-family: sans-serif;    
+}
+
+header {
+    display: flex;
+    text-align: left;
+}
+
+#clouds {
+    width: 1250px;
+    order: -10;
+}
+
+h1 {
+    color: var(--Primary);
+    font-size: 40pt;
+    min-width: 100vw;
+    position: relative;
+    right: 100%;
+    position: fixed;
+    left: 0;
+    padding: 20px;
+}
+
+#search-bar {
+    background-color: var(--Primary);
+    width: 500px;
+    height: 100px;
+    position: fixed;
+    left: 0;
+    border-radius: 10px;
+    border: 2px inset var(--Primary);
+    margin-left: 25vw;
+    margin-top: 100px;
+}
+
+#search-form {
+    justify-content: center;
+    padding: 7% 20%;
+}
+
+#search-field {
+    width: 200px;
+    height: 32px;
+}
+
+.search-btn {
+    padding: 5px;
+    background-color: var(--Secondary);
+    border: 2px outset var(--Secondary);
+}
+
+.search-btn:hover {
+    border: 2px inset var(--Secondary);
+}
+
+#location {
+    width: 180px;
+    background-color: white;
+    color: var(--Accent);
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.current-container {
+    width: 95vw;
+    height: 125px;
+    background-color: var(--Secondary);
+    color: var(--Primary);
+    border-radius: 10px;
+    margin: 5px 2vw;
+    border: 10px outset var(--Secondary);
+    text-align: center;
+    display: flex;
+}
+
+h3 {
+    padding: 30px 2%;
+}
+
+#current-weather-card {
+    width: 90vw;
+    height: 90px;
+    background-color: white;
+    color: var(--Accent);
+    border-radius: 10px;
+    margin: 5px 2vw;
+    flex-direction: column;
+}
+
+.forecast-container {
+    width: 95vw;
+    height: fit-content;
+    background-color: var(--Tertiary);
+    color: var(--Primary);
+    border-radius: 10px;
+    margin: 5px 2vw;
+    border: 10px outset var(--Tertiary);
+    text-align: center;
+    display: flex;
+}
+
+h4 {
+    padding: 10% 2%;
+}
+
+#forecast-weather-card {
+    width: 90vw;
+    height: 90px;
+    background-color: white;
+    color: var(--Accent);
+    border-radius: 10px;
+    margin: 5px 2vw;
+    flex-direction: column;
+}
+
+
+
+
+
+@media screen and (max-width: 700px) {
+    
+    h1 {
+        font-size: 30pt;
+    }
+
+    #search-bar {
+        width: 300px;
+    }
+
+    #search-form {
+        padding: 10% 10px;
+    }
+}
