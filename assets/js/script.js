@@ -2,11 +2,6 @@ const searchBtn = document.querySelector(".search-btn");
 const formInput = document.querySelector("#search-field");
 const weatherData = document.querySelector(".weather-data");
 
-// const currentContainer = document.querySelector(".current-container");
-
-// const forecastContainer = document.querySelector(".forecast-container");
-// const forecastWeatherCard = document.querySelector("#forecast-weather-card");
-
 const baseForecastUrl = `https://api.openweathermap.org/data/2.5/forecast`;
 const baseCurrentUrl = `https://api.openweathermap.org/data/2.5/weather`;
 const apiKey = "9d1a9d813981e0da34fda142fb0b3d26";
@@ -17,7 +12,7 @@ searchBtn.addEventListener('click', function (event) {
     weatherData.innerHTML = '';
 
     const q = formInput.value;
-    // currently need to a input city to get the lat & lon
+
     const currentWeatherApiUrl = `${baseCurrentUrl}?q=${q}&appid=${apiKey}`;
     const forecastWeatherApiUrl = `${baseForecastUrl}?q=${q}&appid=${apiKey}`;
 
@@ -144,4 +139,3 @@ searchBtn.addEventListener('click', function (event) {
 
         });
 });
-// });

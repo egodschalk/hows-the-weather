@@ -15,16 +15,8 @@ header {
     display: flex;
     text-align: left;
     height: 300px;
-    width: 1250px;
-    /* order: -10; */
+    width: 100%;
 }
-
-/* #clouds {
-    background-image: url(../images/clouds.jpg);
-    width: 1250px;
-    height: fit-content;
-    order: -10;
-} */
 
 h1 {
     color: var(--Primary);
@@ -178,10 +170,9 @@ h1 {
     header {
         background-image: url(../images/clouds_sm.jpg);
         background-size: cover;
-
         height: 287px;
         width: 100vw;
-        /* order: -10; */
+
     }
 
     h1 {
@@ -208,10 +199,11 @@ h1 {
     
     header {
         height: 220px;
+        text-align: center;
     }
 
     h1 {
-        font-size: 22pt;
+        font-size: 24pt;
     }
 
     #search-bar {
