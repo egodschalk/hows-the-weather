@@ -1,6 +1,6 @@
 :root {
     --Primary: #1e0342;
-    --Secondary: #6b9cc4;
+    --Secondary: #87b8e1;
     --Tertiary: #cce0ef;
     --Accent: #0e46a3;
 }
@@ -74,8 +74,21 @@ h1 {
     left: 39vw;
 }
 
+#search-history {
+    width: 20vw;
+    height: 95vh;
+    color: var(--Primary);
+    background-color: var(--Tertiary);
+    border: 10px outset var(--Tertiary);
+    padding: 10px;
+    font-size: 16pt;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
 .current-container {
-    width: 95vw;
+    width: 75vw;
     height: fit-content;
     background-color: var(--Secondary);
     color: var(--Primary);
@@ -119,14 +132,14 @@ h1 {
 
 
 .forecast-container {
-    width: 95vw;
+    width: 75vw;
     height: fit-content;
-    background-color: var(--Tertiary);
+    background-color: var(--Secondary);
     color: var(--Primary);
     border-radius: 10px;
     margin: 5px 2vw;
     padding-bottom: 10px;
-    border: 10px outset var(--Tertiary);
+    border: 10px outset var(--Secondary);
     text-align: center;
     display: flex;
     z-index: 2;

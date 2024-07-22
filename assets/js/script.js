@@ -1,32 +1,56 @@
 const searchBtn = document.querySelector(".search-btn");
 const formInput = document.querySelector("#search-field");
 const weatherData = document.querySelector(".weather-data");
+const historyData = document.querySelector(".history-data");
 
 const baseForecastUrl = `https://api.openweathermap.org/data/2.5/forecast`;
 const baseCurrentUrl = `https://api.openweathermap.org/data/2.5/weather`;
 const apiKey = "9d1a9d813981e0da34fda142fb0b3d26";
 
-searchBtn.addEventListener('click', function (event) {
-    event.preventDefault();
+const searchHistory = document.createElement("section");
+searchHistory.setAttribute("id", "search-history");
+searchHistory.textContent = 'Search History';
+historyData.append(searchHistory);
 
-    weatherData.innerHTML = '';
+const cityHistory = JSON.parse(localStorage.getItem('city')) || [];
 
-    const q = formInput.value;
+function renderHistory () {
+    searchHistory.textContent = ""
+    for (let i = 0; i < cityHistory.length; i++) {
+        const cityButton = document.createElement("button");
+        cityButton.textContent = cityHistory[i];
+        cityButton.addEventListener("click", function (event) {
+            const city = event.target.textContent
+            searchCity(city);
 
-    const currentWeatherApiUrl = `${baseCurrentUrl}?q=${q}&appid=${apiKey}`;
-    const forecastWeatherApiUrl = `${baseForecastUrl}?q=${q}&appid=${apiKey}`;
+        })
 
-    fetch(currentWeatherApiUrl)
+        searchHistory.appendChild(cityButton);
+        
+    }
+}
+
+renderHistory();
+
+
+function searchCity(city) {
+    const currentWeatherApiUrl = `${baseCurrentUrl}?q=${city}&appid=${apiKey}`;
+    const forecastWeatherApiUrl = `${baseForecastUrl}?q=${city}&appid=${apiKey}`;
+
+        fetch(currentWeatherApiUrl)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
             console.log(data);
 
+            weatherData.textContent = '';
+
             const location = document.createElement("h3");
-            location.textContent = 'Location: \n' + q;
+            location.textContent = 'Location: \n' + city;
             location.setAttribute("id", "location");
             weatherData.append(location);
+
 
             const currentContainer = document.createElement("section");
             currentContainer.setAttribute("class", "current-container");
@@ -138,4 +162,24 @@ searchBtn.addEventListener('click', function (event) {
             };
 
         });
-});
+
+}
+
+
+
+searchBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    weatherData.innerHTML = '';
+
+    const city = formInput.value;
+    if (!cityHistory.join('').toLowerCase().includes(city.toLowerCase())) {
+        cityHistory.push(city);
+        localStorage.setItem('city', JSON.stringify(cityHistory));
+
+    } 
+    
+    renderHistory();
+    searchCity(city);
+
+    });
