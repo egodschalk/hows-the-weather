@@ -9,26 +9,25 @@ const apiKey = "9d1a9d813981e0da34fda142fb0b3d26";
 
 const searchHistory = document.createElement("section");
 searchHistory.setAttribute("id", "search-history");
-searchHistory.textContent = 'Search History';
 historyData.append(searchHistory);
 
 const cityHistory = JSON.parse(localStorage.getItem('city')) || [];
 
 function renderHistory () {
-    searchHistory.textContent = ""
+    searchHistory.textContent = '';
     for (let i = 0; i < cityHistory.length; i++) {
         const cityButton = document.createElement("button");
         cityButton.textContent = cityHistory[i];
+        cityButton.setAttribute("id", "city-button");
         cityButton.addEventListener("click", function (event) {
             const city = event.target.textContent
             searchCity(city);
-
         })
 
         searchHistory.appendChild(cityButton);
         
     }
-}
+};
 
 renderHistory();
 

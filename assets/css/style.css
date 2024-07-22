@@ -64,14 +64,15 @@ h1 {
     background-color: white;
     color: var(--Accent);
     font-weight: 600;
+    font-size: 16pt;
     border-radius: 10px;
     padding: 10px 30px;
     margin: 10px;
     text-align: center;
     display: flex;
     position: absolute;
-    top: 200px;
-    left: 39vw;
+    top: 220px;
+    left: 35vw;
 }
 
 #search-history {
@@ -80,11 +81,37 @@ h1 {
     color: var(--Primary);
     background-color: var(--Tertiary);
     border: 10px outset var(--Tertiary);
-    padding: 10px;
-    font-size: 16pt;
     border-radius: 10px;
+    padding: 10px;
     margin: 10px;
     text-align: center;
+    padding-top: 40px;
+}
+
+#history-title {
+    color: var(--Primary);
+    font-size: 16pt;
+    padding: 10px;
+    padding-left: 20px;
+    margin: 10px;
+    position: absolute;
+    top: 310px;
+    z-index: 10;
+    /* justify-self: center; */
+}
+
+#city-button {
+    color: var(--Primary);
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px outset white;
+    width: 75%;
+}
+
+#city-button:hover {
+    border: 3px inset white;
 }
 
 .current-container {
@@ -99,6 +126,9 @@ h1 {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
+    position: absolute;
+    right: 0%;
+    top: 42.5%;
 }
 
 #current-header {
@@ -144,6 +174,9 @@ h1 {
     display: flex;
     z-index: 2;
     flex-wrap: wrap;
+    position: absolute;
+    right: 0%;
+    top: 68%;
 }
 
 #forecast-header {
@@ -176,7 +209,13 @@ h1 {
     padding-top: 28px;
 }
 
+@media screen and (max-width: 1030px) {
+    
+    #history-title {
+        font-size: 12pt;
+    }
 
+}
 
 @media screen and (max-width: 850px) {
     
@@ -194,7 +233,7 @@ h1 {
 
     #search-bar {
         width: 300px;
-        left: 7vw;
+        left: 5vw;
     }
 
     #search-form {
@@ -202,7 +241,35 @@ h1 {
     }
 
     #location {
-        left: 38vw;
+        left: 30vw;
+    }
+
+    #search-history {
+        width: 92vw;
+        height: fit-content;
+        padding-top: 25px;
+        padding-left: 10px;
+    }
+
+    #history-title {
+        top: 290px;
+        left: 34vw;
+        font-size: 16pt;
+    }
+
+    #city-button {
+        width: auto;
+        margin: 5px;
+        padding: 5px;
+    }
+
+    .current-container, 
+    .forecast-container {
+        right: auto;
+        top: auto;
+        position: static;
+        width: 94vw;
+        margin: 10px;
     }
 
 }
@@ -234,6 +301,23 @@ h1 {
         left: 17vw;
         top: 160px;
         z-index: 15;
+    }
+
+    #search-history {
+        width: 96vw;
+        height: fit-content;
+        padding-top: 25px;
+        padding-left: 10px;
+    }
+
+    #history-title {
+        top: 220px;
+        left: 80px;
+    }
+
+    #city-button {
+        margin: 5px;
+        padding: 5px;
     }
 
     #current-weather-card {

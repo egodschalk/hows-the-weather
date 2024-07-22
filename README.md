@@ -10,7 +10,7 @@ I created a wireframe for this application:
 Screenshots of the application:
 
 Desktop site
-![alt text](./assets/images/screenshot1.png)
+![alt text](./assets/images/screenshot1.jpg)
 
 Mobile site
-![alt text](./assets/images/screenshot2.png)
+![alt text](./assets/images/screenshot2.jpg)
