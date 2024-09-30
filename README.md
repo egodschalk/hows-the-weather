@@ -8,7 +8,7 @@ This is a weather app that allows a user to search for weather in a given city. 
 
 My weather dashboard is deployed at: https://egodschalk.github.io/hows-the-weather/
 
-##Github Portfolio
+## Github Portfolio
 
 The link to the GitHub repo for this project is: https://github.com/egodschalk/hows-the-weather
 
